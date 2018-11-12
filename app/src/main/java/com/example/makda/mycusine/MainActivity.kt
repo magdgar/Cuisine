@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        items.add(data!!.getStringExtra("r"))
+        items.add(data!!.getStringExtra("result"))
         adapter!!.notifyDataSetChanged()
     }
 }

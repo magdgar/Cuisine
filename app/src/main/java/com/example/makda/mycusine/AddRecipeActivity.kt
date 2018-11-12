@@ -6,22 +6,17 @@ import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_add_recipie.*
 import android.content.Intent
 
-
-
-
 class AddRecipeActivity: AppCompatActivity() {
-
-    private var nameEditText: EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_recipie)
 
-        nameEditText = findViewById(R.id.recipieNameText)
-
         button.setOnClickListener {
+            val nameEditText: EditText = findViewById(R.id.recipieNameText)
+
             val intent = Intent()
-            intent.putExtra("r", "a")
+            intent.putExtra("result", nameEditText.text.toString())
             setResult(RESULT_OK, intent)
             finish()
         }
