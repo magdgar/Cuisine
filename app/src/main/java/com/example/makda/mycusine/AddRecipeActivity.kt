@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_add_recipie.*
+import android.content.Intent
+
+
 
 
 class AddRecipeActivity: AppCompatActivity() {
@@ -17,7 +20,9 @@ class AddRecipeActivity: AppCompatActivity() {
         nameEditText = findViewById(R.id.recipieNameText)
 
         button.setOnClickListener {
-            nameEditText.toString()
+            val intent = Intent()
+            intent.putExtra("r", "a")
+            setResult(RESULT_OK, intent)
             finish()
         }
     }

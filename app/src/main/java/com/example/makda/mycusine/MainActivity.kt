@@ -10,29 +10,35 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
+    private var adapter: ArrayAdapter<String>? = null
+    private val items: ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val list = findViewById<ListView>(R.id.listView)
-        val items = ArrayList<String>()
         items.add("recipe a")
 
-        val adapter = ArrayAdapter(this, R.layout.list_item, items)
+        adapter = ArrayAdapter(this, R.layout.list_item, items)
 
         list.adapter = adapter
 
         floatingActionButton.setOnClickListener {
-            //addNewRecipe(it, items)
-            items.add("recipe x")
-            adapter.notifyDataSetChanged()
+            addNewRecipe(it, this.items)
         }
     }
 
-    fun addNewRecipe(view: View, extras: ArrayList<String>) {
+    private fun addNewRecipe(view: View, extras: ArrayList<String>) {
         val intent = Intent(this, AddRecipeActivity::class.java)
-        //intent.putExtra("recipeList", extras)
-        startActivity(intent)
+        intent.putExtra("recipeList", extras)
+        startActivityForResult(intent, 0)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        items.add(data!!.getStringExtra("r"))
+        adapter!!.notifyDataSetChanged()
     }
 }
