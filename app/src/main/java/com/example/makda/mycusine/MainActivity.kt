@@ -4,23 +4,22 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.content.Intent
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
-    private var adapter: ArrayAdapter<String>? = null
-    private val items: ArrayList<String> = ArrayList()
+    private var adapter: RecipeAdapter?= null
+    private val items: ArrayList<ListItem> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val list = findViewById<ListView>(R.id.listView)
-        items.add("recipe a")
+        items.add(ListItem(R.drawable.abc_btn_check_to_on_mtrl_015, "name", "desc"))
 
-        adapter = ArrayAdapter(this, R.layout.list_item, items)
+        adapter = RecipeAdapter(this, items)
 
         list.adapter = adapter
 
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun addNewRecipe(view: View, extras: ArrayList<String>) {
+    private fun addNewRecipe(view: View, extras: ArrayList<ListItem>) {
         val intent = Intent(this, AddRecipeActivity::class.java)
         intent.putExtra("recipeList", extras)
         startActivityForResult(intent, 0)
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        items.add(data!!.getStringExtra("result"))
+        items.add(ListItem(R.drawable.abc_btn_check_to_on_mtrl_015, data!!.getStringExtra("name"), "m"))
         adapter!!.notifyDataSetChanged()
     }
 }
