@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/rowItemImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         app:srcCompat="@mipmap/ic_launcher"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="62dp" />
