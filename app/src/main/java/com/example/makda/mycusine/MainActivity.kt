@@ -2,7 +2,6 @@ package com.example.makda.mycusine
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.content.Intent
 import android.widget.ListView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,13 +23,12 @@ class MainActivity : AppCompatActivity() {
         list.adapter = adapter
 
         floatingActionButton.setOnClickListener {
-            addNewRecipe(it, this.items)
+            addNewRecipe()
         }
     }
 
-    private fun addNewRecipe(view: View, extras: ArrayList<ListItem>) {
+    private fun addNewRecipe() {
         val intent = Intent(this, AddRecipeActivity::class.java)
-        intent.putExtra("recipeList", extras)
         startActivityForResult(intent, 0)
     }
 
