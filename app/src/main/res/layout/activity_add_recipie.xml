@@ -26,6 +26,13 @@
         android:text="Name"
         tools:ignore="MissingConstraints"/>
 
+    <EditText
+        android:id="@+id/recipeDescriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"

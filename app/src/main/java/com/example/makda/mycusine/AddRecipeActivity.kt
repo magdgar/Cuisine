@@ -14,9 +14,11 @@ class AddRecipeActivity: AppCompatActivity() {
 
         button.setOnClickListener {
             val nameEditText: EditText = findViewById(R.id.recipieNameText)
+            val descriptionText: EditText = findViewById(R.id.recipeDescriptionText)
 
             val intent = Intent()
-            intent.putExtra("result", nameEditText.text.toString())
+            intent.putExtra("name", nameEditText.text.toString())
+            intent.putExtra("description", descriptionText.text.toString())
             setResult(RESULT_OK, intent)
             finish()
         }
