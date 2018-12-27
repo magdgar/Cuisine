@@ -2,42 +2,40 @@ package com.example.makda.mycusine;
 
 public class ListItem {
 
-    // Store the id of the  movie poster
-    private int mImageDrawable;
-    // Store the name of the movie
-    private String mName;
-    // Store the release date of the movie
-    private String mRelease;
+    private int imageDrawable;
 
-    // Constructor that is used to create an instance of the Movie object
-    public ListItem(int mImageDrawable, String mName, String mRelease) {
-        this.mImageDrawable = mImageDrawable;
-        this.mName = mName;
-        this.mRelease = mRelease;
+    private String name;
+
+    private String desc;
+
+    public ListItem(int imageDrawable, String name, String desc) {
+        this.imageDrawable = imageDrawable;
+        this.name = name;
+        this.desc = desc;
     }
 
-    public int getmImageDrawable() {
-        return mImageDrawable;
+    public int getImageDrawable() {
+        return imageDrawable;
     }
 
-    public void setmImageDrawable(int mImageDrawable) {
-        this.mImageDrawable = mImageDrawable;
+    public void setImageDrawable(int imageDrawable) {
+        this.imageDrawable = imageDrawable;
     }
 
-    public String getmName() {
-        return mName;
+    public String getName() {
+        return name;
     }
 
-    public void setmName(String mName) {
-        this.mName = mName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getmRelease() {
-        return mRelease;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setmRelease(String mRelease) {
-        this.mRelease = mRelease;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 }
 

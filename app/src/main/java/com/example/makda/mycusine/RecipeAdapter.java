@@ -31,11 +31,11 @@ public class RecipeAdapter extends ArrayAdapter<ListItem> {
 
         ListItem currentMovie = values.get(position);
 
-        ImageView image = (ImageView)listItem.findViewById(R.id.rowItemImage);
-        image.setImageResource(currentMovie.getmImageDrawable());
+        ImageView image = listItem.findViewById(R.id.rowItemImage);
+        image.setImageResource(currentMovie.getImageDrawable());
 
-        TextView name = (TextView) listItem.findViewById(R.id.rowItemText);
-        name.setText(currentMovie.getmName());
+        TextView name = listItem.findViewById(R.id.rowItemText);
+        name.setText(currentMovie.getName());
 
         return listItem;
     }
