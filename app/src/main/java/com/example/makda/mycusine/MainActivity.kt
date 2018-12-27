@@ -6,7 +6,6 @@ import android.content.Intent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ListView
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -34,7 +33,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     }
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        Toast.makeText(this, "Yey", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, ViewItemActivity::class.java)
+        startActivity(intent)
     }
 
     private fun addNewRecipe() {
