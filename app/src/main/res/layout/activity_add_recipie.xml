@@ -4,33 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/submit_button"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
     android:layout_centerHorizontal="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginTop="20dp">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="222dp"
-        android:layout_height="189dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/dish_icon"
+        android:layout_gravity="center" />
 
     <EditText
         android:id="@+id/recipieNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_marginTop="15dp"
         android:inputType="textPersonName"
-        android:text="Name"
-        tools:ignore="MissingConstraints"/>
+        android:text="Name"/>
 
     <EditText
         android:id="@+id/recipeDescriptionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"
         android:inputType="textMultiLine" />
 
     <Button
@@ -38,7 +38,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.widget.LinearLayout>
