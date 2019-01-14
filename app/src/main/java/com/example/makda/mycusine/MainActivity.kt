@@ -47,7 +47,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        items.add(ListItem(R.drawable.abc_btn_check_to_on_mtrl_015, data!!.getStringExtra("name"), "m"))
+        items.add(ListItem(R.drawable.abc_btn_check_to_on_mtrl_015,
+                data!!.getStringExtra("name"), data!!.getStringExtra("description")))
         adapter!!.notifyDataSetChanged()
     }
 }
