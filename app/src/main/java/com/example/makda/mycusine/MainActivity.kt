@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         listView.onItemClickListener = this
 
         val list = findViewById<ListView>(R.id.listView)
-        items.add(ListItem(R.drawable.abc_btn_check_to_on_mtrl_015, "name", "desc"))
+        items.add(ListItem(R.drawable.dish_icon, "name", "desc"))
 
         adapter = RecipeAdapter(this, items)
 
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        items.add(ListItem(R.drawable.abc_btn_check_to_on_mtrl_015,
+        items.add(ListItem(R.drawable.dish_icon,
                 data!!.getStringExtra("name"), data!!.getStringExtra("description")))
         adapter!!.notifyDataSetChanged()
     }
